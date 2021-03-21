@@ -3,4 +3,10 @@
     <string name="tEmail">Email</string>
     <string name="tPassword">Password</string>
     <string name="bsignin">Sign-in</string>
+    <string name="var1">ini pesan</string>
+    <string name="tData">Data anda</string>
+    <string name="txemail">ini hasil email</string>
+    <string name="txpassword">ini hasil password</string>
+    <string name="label2">Login Berhasil</string>
+    <string name="tLogin">LOGIN</string>
 </resources>

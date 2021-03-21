@@ -1,6 +1,8 @@
 package com.example.sampleconstraintlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
     String nama, password,massage;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -23,23 +26,46 @@ public class MainActivity extends AppCompatActivity {
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 nama = edemail.getText().toString();
                 password = edpassword.getText().toString();
-                if (nama.equals("admin@mail.com")&& password.equals("123"){
-                    Toast t=Toast.makeText(getApplicationContext(),
-                            "Login sukses");
-                    t.show();
-                }
-                else{
-                    Toast t=Toast.makeText(getApplicationContext(),
-                            "Login gagal");
-                    t.show();
-                }
+                String email = "admin@mail.com";
+                String pass = "123";
 
+                if (nama.isEmpty() || password.isEmpty()) {
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Email dan password wajib diisi!!",
+                            Toast.LENGTH_LONG);
+                    t.show();
+                } else {
+                    if (nama.equals(email) && password.equals(pass)) {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "login sukses",
+                                Toast.LENGTH_LONG);
+                        t.show();
 
+                        Bundle b = new Bundle();
+
+                        b.putString("a", nama.trim());
+
+                        b.putString("b", password.trim());
+
+                        Intent i = new Intent(getApplicationContext(), ActivityHasil.class);
+
+                        i.putExtras(b);
+
+                        startActivity(i);
+                    } else {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login gagal",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
 
             }
-        }
+        });
     }
 }
+
+
