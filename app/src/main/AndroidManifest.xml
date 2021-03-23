@@ -16,6 +16,8 @@
         <activity android:name=".ActivityHasil"
             android:label="@string/label2"
             android:parentActivityName=".MainActivity"/>
+        <activity android:name=".DaftarActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
