@@ -1,4 +1,5 @@
-package com.example.sampleconstraintlayout;
+package com.example.myapplication;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +12,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class Home extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     private ListView list;
 
@@ -30,11 +32,11 @@ public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.home);
 
         listNama = new String[]{"Inayah", "Ilham", "Eris", "Fikri", "Maul", "Intan", "Vina", "Gita", "Vian", "Lutfi"};
 
-        list = findViewById(R.id.listKontak);
+        list = findViewById(R.id.listkontak);
 
         classNamaArrayList = new ArrayList<>();
 
@@ -42,7 +44,7 @@ public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenu
         {
             ClassNama classNama = new ClassNama(listNama[i]);
 
-            classNamaArrayList.add(adapter);
+            classNamaArrayList.add(classNama);
         }
 
         adapter = new ListViewAdapter(this);
@@ -58,7 +60,7 @@ public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenu
 
                 PopupMenu pm = new PopupMenu(getApplicationContext(),view);
 
-                pm.setOnMenuItemClickListener(Home_Activity.this);
+                pm.setOnMenuItemClickListener(Home.this);
 
                 pm.inflate(R.menu.popup_menu);
 
@@ -72,7 +74,7 @@ public class Home_Activity extends AppCompatActivity implements PopupMenu.OnMenu
         switch (menuItem.getItemId())
         {
             case R.id.mnview:
-                intent = new Intent(getApplicationContext(),ActivityLihatData.class);
+                intent = new Intent(getApplicationContext(),LihatData.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 break;

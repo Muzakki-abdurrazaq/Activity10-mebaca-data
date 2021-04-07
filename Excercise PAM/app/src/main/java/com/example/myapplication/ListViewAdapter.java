@@ -1,4 +1,5 @@
-package com.example.sampleconstraintlayout;
+package com.example.myapplication;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ public class ListViewAdapter extends BaseAdapter{
 
         this.arrayList = new ArrayList<ClassNama>();
 
-        this.arrayList.addAll((Home_Activity.ClassNamaArrayList));
+        this.arrayList.addAll((Home.classNamaArrayList));
     }
 
     public class ViewHolder {
@@ -31,12 +32,12 @@ public class ListViewAdapter extends BaseAdapter{
     }
     @Override
     public int getCount() {
-        return Home_Activity.ClassNamaArrayList.size;
+        return Home.classNamaArrayList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return Home_Activity.ClassNamaArrayList.get(i);
+        return Home.classNamaArrayList.get(i);
     }
 
     @Override
@@ -59,7 +60,7 @@ public class ListViewAdapter extends BaseAdapter{
         }else {
             holder = (ViewHolder) view.getTag();
         }
-        holder.name.setText((Home_Activity.ClassNama.get(i).getName));
+        holder.name.setText((Home.classNama.get(i).getName));
         return view;
     }
 }
