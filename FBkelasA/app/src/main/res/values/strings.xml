@@ -1,0 +1,12 @@
+<resources>
+    <string name="namaAPP">Test Firebase</string>
+    <string name="btTambah">Tambah Data</string>
+    <string name="btLihat">Lihat Data</string>
+    <string name="bOk">Submit Data</string>
+    <string name="eno">Kode Barang</string>
+    <string name="enama">Nama Barang</string>
+    <string name="txtJudul1">AKTIVITAS</string>
+    <string name="txtJudul2">Penambahan Data</string>
+    <string name="txtJudul3">Data Barang</string>
+    <string name="txtKosong"></string>
+</resources>
